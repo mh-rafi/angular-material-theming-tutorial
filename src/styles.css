@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+/* @import "~@angular/material/prebuilt-themes/indigo-pink.css"; */
+body {
+    margin: 0;
+    padding: 0;
+}
+.theme-list .mat-menu-item {
+    width: 36px;
+    height: 36px;
+    padding: 5px;
+}
+.theme-list .mat-menu-item .egret-swatch {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+.theme-list .mat-menu-item .active-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    color: #ffffff;
+}

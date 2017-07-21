@@ -1,3 +1,44 @@
-<h1>
-  {{title}}
-</h1>
+<div class=" app-wrap">
+  <md-toolbar 
+  color="primary" 
+  [style.margin]="'0 0 24px'">
+  Angular Material Theming Demo
+  <span fxFlex></span>
+  <button 
+  md-icon-button 
+  [style.overflow]="'visible'"
+  mdTooltip="Color Schemes"
+  [mdMenuTriggerFor]="themeMenu"
+  class="topbar-button-right">
+    <md-icon>format_color_fill</md-icon>
+  </button>
+  <md-menu #themeMenu="mdMenu">
+    <md-grid-list
+    class="theme-list" 
+    cols="2" 
+    rowHeight="48px">
+      <md-grid-tile 
+      *ngFor="let theme of themes"
+      (click)="changeTheme(theme.name)">
+        <div md-menu-item [title]="theme.name">
+          <div [style.background]="theme.baseColor" class="egret-swatch"></div>
+          <md-icon class="active-icon" *ngIf="theme.isActive">check</md-icon>
+        </div>
+      </md-grid-tile>
+    </md-grid-list>
+  </md-menu>
+  </md-toolbar>
+  <div class="app-container">
+    <md-card>
+      <md-card-title>Buttons</md-card-title>
+      <md-card-content>
+        <button md-button color="primary">Primary</button>
+        <button md-button md-raised-button>Default</button>
+        <button md-button md-raised-button color="primary">Primary</button>
+        <button md-button md-raised-button color="accent">Accent</button>
+        <button md-button md-raised-button color="warn">Warn</button>
+      </md-card-content>
+    </md-card>
+  </div>
+  
+</div>
